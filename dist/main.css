@@ -1,0 +1,189 @@
+/*!****************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/style/styles.scss ***!
+  \****************************************************************************************************************/
+@charset "UTF-8";
+body {
+  color: white;
+  background-color: #1e1c1c;
+  margin: 2%; }
+
+.name {
+  color: red;
+  text-decoration: none; }
+  .name:hover {
+    text-decoration: none;
+    color: red; }
+  .name:visited {
+    color: red; }
+  .name h1 {
+    font-size: 3em;
+    margin: 0; }
+
+#search-form input[type="text"] {
+  padding: 8px 40px 8px 5px;
+  border-radius: 15px;
+  border: 1px solid white;
+  background-color: #1e1c1c;
+  margin-top: 6%; }
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2%; }
+
+.hero h1 {
+  font-size: 3em; }
+
+.hero p {
+  font-size: 1.2em; }
+
+#filters {
+  margin-top: 30px; }
+
+#platformFilter {
+  padding: 10px 20px 10px 10px;
+  background-color: red;
+  color: white;
+  border: none; }
+
+.cardGame {
+  width: calc(33.33% - 20px);
+  margin-right: 20px;
+  margin-bottom: 20px;
+  position: relative;
+  float: left;
+  height: 300px; }
+  .cardGame:nth-child(3n) {
+    margin-right: 0; }
+  .cardGame .game-image {
+    width: 100%;
+    height: 60%;
+    object-fit: cover; }
+  .cardGame h1, .cardGame p, .cardGame a {
+    margin: 10px; }
+  .cardGame h1 {
+    font-weight: bold;
+    font-size: 1.4em; }
+
+.show-more {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 40px;
+  background-color: red;
+  color: white;
+  border: none;
+  cursor: pointer;
+  clear: both;
+  font-weight: bold; }
+
+.show-more.hide {
+  display: none; }
+
+.footer hr {
+  border: none;
+  height: 6px;
+  background-color: red;
+  margin: 10px 0;
+  font-weight: bold;
+  width: 8%; }
+
+.footer p {
+  font-size: small; }
+
+.page-detail {
+  position: relative; }
+  .page-detail .article {
+    position: relative; }
+    .page-detail .article .background-image {
+      position: relative;
+      display: block;
+      width: 100%; }
+  .page-detail .website {
+    display: flex;
+    justify-content: end;
+    margin: 20px auto;
+    padding: 10px 60px;
+    background-color: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold; }
+  .page-detail .website a {
+    text-decoration: none;
+    color: white; }
+
+.header {
+  display: flex;
+  justify-content: space-between; }
+
+.header h1 {
+  font-size: 4em; }
+
+.header p {
+  margin-top: 6.5%;
+  font-size: 2em;
+  font-weight: bold;
+  color: red; }
+
+.trailers {
+  width: 100%;
+  box-sizing: border-box; }
+  .trailers iframe {
+    width: 100%;
+    height: 600px; }
+
+.screenshots {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  /* Deux colonnes */
+  grid-gap: 20px;
+  /* Espacement entre les images */ }
+
+.screenshots img {
+  width: 100%;
+  /* Les images occupent toute la largeur de leur conteneur */
+  height: auto;
+  /* Hauteur automatique pour conserver les proportions */
+  display: block;
+  /* Pour éviter les espaces blancs sous les images */ }
+
+.name-details {
+  font-size: 2.5em;
+  font-weight: bold;
+  color: red; }
+
+#first {
+  display: flex;
+  justify-content: space-between; }
+
+#second {
+  display: flex;
+  flex-direction: row; }
+
+#second .genres,
+#second .tags {
+  flex: 1; }
+
+.position-details {
+  display: flex;
+  flex-direction: column; }
+
+.position-details .mini-details,
+.position-details .release-date,
+.position-details .developers,
+.position-details .plateforms,
+.position-details .publishers,
+.position-details .genres,
+.position-details .tags {
+  margin: 0; }
+
+#plot-details {
+  display: flex;
+  flex-direction: column; }
+
+.plot {
+  font-weight: bold; }
+
+#pageContent {
+  margin-top: 20px; }
+

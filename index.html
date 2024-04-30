@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webpack App</title>
+    <link href="./dist/main.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Header -->
+    <div class="nav">
+      <a href="#pagelist" class="name"><h1>The Hyper Progame</h1></a>
+      <div id="search-form">
+          <input type="text" id="searchInput" placeholder="Search...">
+      </div>
+    </div>
+
+    <div class="hero">
+      <h1> Welcome </h1>
+      <p>
+        The Hyper Progame is the world's premier event for computer and video games and related products. At The Hyper Progame,
+        the video game industry's top talent pack the Los Angeles Convention Center, connecting tens of thousands of the best, 
+        brightest, and most innovative in the interactive entertainement industry. For three exciting days, leading-edge companies,
+        groundbreaking new technologies, and never-before-seen products will be showcased. The Hyper Progame connects you 
+        with both new and existing partners, industry executives, gamers, and social influencers providing unprecedented exposure.
+      </p>
+    </div>
+
+    <!-- Filtres -->
+    <div id="filters">
+      <select id="platformFilter">
+        <option value="all"> Platform : any </option>
+        <option value="Nintendo"> Nintendo </option>
+        <option value="PlayStation"> PlayStation </option>
+        <option value="Xbox"> Xbox </option>
+        <option value="Linux"> Linux </option>
+        <option value="PC"> PC </option>
+      </select>
+    </div>
+
+    <!-- PageDetails -->
+    <section id="pageContent">
+        <div class="page-detail">
+            <div class="article">
+                <img src='' class="background-image">
+                <h1 class="title"></h1>
+                <p class="description"></p>
+                <p class="developers"></p>
+                <p class="tags"></p>
+                <p class="genres"></p>
+                <p class="publishers"></p>
+                <p class="platforms"></p>
+                <div id="trailers"></div>
+                <p class="ratings"></p>
+                <p class="stores"></p>
+                <div class="screenshots"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- recherche de jeux - PageList -->
+    <section id="gameResults" class="game-results"></section>
+    <button id="showMoreButton" class="show-more">Show more</button>
+
+    <!-- Footer -->
+    <div class="footer">
+      <hr>
+      <p> Anelise @ 2024 - Fictionnal website for exercise </p>
+    </div>
+
+    <script src="./src/Home.js"></script>
+    <script src="./src/PageList.js"></script>
+    <script src="./src/PageDetails.js"></script>
+    <script src="./src/routes.js"></script>
+    <script src="./dist/bundle.js"></script>
+</body>
+</html>
+
+
