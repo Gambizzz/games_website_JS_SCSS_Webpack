@@ -38,25 +38,25 @@ const PageDetails = (argument) => {
     
       // Développeurs
       if (developers && developers.length > 0) {
-        const developersList = developers.map(developer => `<a href="/developers/${developer.slug}">${developer.name}</a>`).join(", ");
+        const developersList = developers.map(developer => `<a class="internal-link" href="/developers/${developer.slug}">${developer.name}</a>`).join(", ");
         articleDOM.querySelector(".developers").innerHTML = `${developersList}`;
       }
     
       // Tags
       if (tags && tags.length > 0) {
-        const tagsList = tags.map(tag => `<a href="/tags/${tag.slug}">${tag.name}</a>`).join(", ");
+        const tagsList = tags.map(tag => `<a class="internal-link" href="/tags/${tag.slug}">${tag.name}</a>`).join(", ");
         articleDOM.querySelector(".tags").innerHTML = `${tagsList}`;
       }
     
       // Genres
       if (genres && genres.length > 0) {
-        const genresList = genres.map(genre => `<a href="/genres/${genre.slug}">${genre.name}</a>`).join(", ");
+        const genresList = genres.map(genre => `<a class="internal-link" href="/genres/${genre.slug}">${genre.name}</a>`).join(", ");
         articleDOM.querySelector(".genres").innerHTML = `${genresList}`;
       }
     
       // Éditeurs
       if (publishers && publishers.length > 0) {
-        const publishersList = publishers.map(publisher => `<a href="/publishers/${publisher.slug}">${publisher.name}</a>`).join(", ");
+        const publishersList = publishers.map(publisher => `<a class="internal-link" href="/publishers/${publisher.slug}">${publisher.name}</a>`).join(", ");
         articleDOM.querySelector(".publishers").innerHTML = `${publishersList}`;
       }
     
@@ -145,8 +145,10 @@ const PageDetails = (argument) => {
       pageContent.innerHTML = `
         <section class="page-detail">
           <div class="article">
+          <div class="pic">
             <img src="" class="background-image">
             <button class="website"></button>
+          </div>
             <div class="header">
               <h1 class="title"></h1>
               <p class="ratings"></p>

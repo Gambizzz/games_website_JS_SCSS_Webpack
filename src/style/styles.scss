@@ -168,10 +168,25 @@ body {
       width: 100%;
     }
   }
+}
+
+.pic {
+  position: relative;
+
+  .background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
 
   .website {
-    display: flex;
+    position: absolute;
     justify-content: end;
+    top: 90%;
+    left: 90%;
     margin: 20px auto;
     padding: 10px 60px;
     background-color: $name;
@@ -179,6 +194,8 @@ body {
     border: none;
     cursor: pointer;
     font-weight: bold;
+    transform: translate(-50%, -50%);
+    z-index: 2;
   }
 
   .website a {
@@ -186,6 +203,7 @@ body {
     color: $primary-color;
   }
 }
+
 
 .header {
   display: flex;
@@ -264,6 +282,34 @@ body {
   display: block;
   margin-bottom: 10px; // Espacement entre les liens
 }
+
+a.internal-link {
+  text-decoration: none; // Supprimer le soulignement par défaut
+  color: $primary-color; // Couleur du lien
+  
+  &:hover {
+    position: relative; // Définir la position relative pour le pseudo-élément
+    text-decoration: none; // Supprimer le soulignement par défaut lors du survol
+    
+    &:before {
+      content: ''; // Ajouter un contenu au pseudo-élément
+      position: absolute; // Définir la position absolue par rapport au lien
+      width: 100%; // Définir la largeur à 100% du lien parent
+      height: 2px; // Définir la hauteur du soulignement
+      bottom: 0; // Positionner le soulignement en bas
+      left: 0; // Positionner le soulignement à gauche
+      background-color: $name; // Couleur du soulignement
+      transform-origin: left; // Définir l'origine de la transformation à gauche
+      transform: scaleX(0); // Initialiser l'échelle horizontale à 0 (aucun soulignement)
+      transition: transform 0.5s ease; // Ajouter une transition pour l'animation
+    }
+    
+    &:hover:before {
+      transform: scaleX(1); // Mettre à l'échelle horizontale à 1 (soulignement complet)
+    }
+  }
+}
+
 
 #pageContent {
   margin-top: $margin-between-sections;
