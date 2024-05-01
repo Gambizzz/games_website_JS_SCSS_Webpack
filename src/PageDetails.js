@@ -2,7 +2,7 @@ const PageDetails = (argument) => {
   const preparePage = () => {
     const cleanedArgument = argument.trim().replace(/\s+/g, "-");
 
-    const displayGame = (gameData, trailerData, screenData) => {
+    const displayGame = (gameData, trailerData, screenData, storesData) => {
       const {
         name,
         background_image,
@@ -83,11 +83,11 @@ const PageDetails = (argument) => {
       }
 
       // Liens d'achat
-      if (stores && stores.length > 0) {
-        const storesList = stores.map(store => `<a href="/stores/${store.store.slug}">${store.store.name}</a>`).join(", ");
+      if (storesData.results.length > 0) {
+        const storesList = storesData.results.map(store => `<a href="${store.url}">${store.id}</a>`);
         articleDOM.querySelector(".stores").innerHTML = `${storesList}`;
       }
-      
+
       // Trailers
       if (trailerData.results.length > 0) {
         const trailer = trailerData.results[0].data.max;
@@ -113,11 +113,19 @@ const PageDetails = (argument) => {
 
     const fetchGameScreenshot = (url, argument, responseData, trailerData) => {
       fetch(`${url}/${argument}/screenshots?key=${API_KEY}`)
-        .then((response) => response.json())
-        .then((screenData) => {
-          displayGame(responseData, trailerData, screenData);
-        });
-    };
+          .then((response) => response.json())
+          .then((screenData) => {
+              fetchGameStores(url, argument, responseData, trailerData, screenData);
+          });
+  };
+
+  const fetchGameStores = (url, argument, responseData, trailerData, screenData) => {
+      fetch(`${url}/${argument}/stores?key=${API_KEY}`)
+          .then((response) => response.json())
+          .then((storesData) => {
+              displayGame(responseData, trailerData, screenData, storesData);
+          });
+  };
 
     fetchGame('https://api.rawg.io/api/games', cleanedArgument);
 
@@ -157,26 +165,22 @@ const PageDetails = (argument) => {
                 <p class="developers"></p>
               </div>
               <div class="position-details">
-                <p class="mini-details">Plateforms</p>
+                <p class="mini-details">Platforms</p>
                 <p class="platforms"><span></span></p>
               </div>
               <div class="position-details">
                 <p class="mini-details">Publishers</p>
                 <p class="publishers"></p>
               </div>
-            </div>
-            
-            <div id="second">
               <div class="position-details">
                 <p class="mini-details">Genres</p>
                 <p class="genres"></p>
               </div>
-              <div class="position-details">
-                <p class="mini-details">Tags</p>
-                <p class="tags"></p>
-              </div>
             </div>
-
+            <div id="second">
+              <p class="mini-details">Tags</p>
+              <p class="tags"></p>
+            </div>
             <h1 class="name-details">TRAILER</h1>
             <div class="trailers"> No trailer, sorry... <span></span></div>
             <h1 class="name-details">BUY</h1>

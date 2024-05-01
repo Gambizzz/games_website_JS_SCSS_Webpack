@@ -1,27 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Expletus+Sans:ital,wght@0,400..700;1,400..700&display=swap');
+
+@mixin border-styles($color: $primary-color) {
+  border: 1px solid $color;
+}
+
+@mixin text-styles($size, $weight: normal, $color: $primary-color) {
+  font-size: $size;
+  font-weight: $weight;
+  color: $color;
+}
+
+@mixin mobile-styles {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+// Variables
 $primary-color: white;
 $bg: #1e1c1c;
 $name: red;
 $link-color: red;
 $input-border-radius: 15px;
+$margin: 2%;
+$margin-top: 6%;
+$margin-between-sections: 20px;
+$padding-search-form-horizontal: 40px;
+$padding-search-form-vertical: 8px;
+$padding-platform-filter-horizontal: 20px;
+$padding-platform-filter-vertical: 10px;
+$padding-show-more: 20px;
+$expletus-sans-font: "Expletus Sans", sans-serif;
 
-
+// Styles
 body {
-  color: $primary-color;
+  @include text-styles(1em); // Utilisation du mixin text-styles
   background-color: $bg;
-  margin: 2%;
+  margin: $margin;
+  font-family: $expletus-sans-font;
 }
 
 .name {
-  color: red;
+  color: $name;
   text-decoration: none;
 
   &:hover {
     text-decoration: none;
-    color: red;
+    color: $name;
   }
 
   &:visited {
-    color: red;
+    color: $name;
   }
 
   h1 {
@@ -32,20 +61,19 @@ body {
 
 #search-form {
   input[type="text"] {
-    padding: 8px 40px 8px 5px;
+    padding: $padding-search-form-vertical $padding-search-form-horizontal $padding-search-form-vertical 5px;
     border-radius: $input-border-radius;
-    border: 1px solid $primary-color;
+    @include border-styles; // Inclusion du mixin border-styles
     background-color: $bg;
-    margin-top: 6%;
+    margin-top: $margin-top;
   }
 }
 
 .nav {
   display: flex;
   justify-content: space-between;
-  margin-top: 2%;
+  margin-top: $margin;
 }
-
 
 .hero h1 {
   font-size: 3em;
@@ -55,23 +83,23 @@ body {
   font-size: 1.2em;
 }
 
-
 #filters {
-  margin-top: 30px;
+  margin-top: $margin-between-sections;
 }
 
 #platformFilter {
-  padding: 10px 20px 10px 10px;
+  padding: $padding-platform-filter-vertical $padding-platform-filter-horizontal $padding-platform-filter-vertical 10px;
   background-color: $name;
   color: $primary-color;
   border: none;
 }
 
-
 .cardGame {
-  width: calc(33.33% - 20px); 
-  margin-right: 20px; 
-  margin-bottom: 20px;
+  $card-margin: calc(33.33% - 20px);
+
+  width: $card-margin; 
+  margin-right: $margin-between-sections; 
+  margin-bottom: $margin-between-sections;
   position: relative; 
   float: left; 
   height: 300px;
@@ -98,7 +126,7 @@ body {
 
 .show-more {
   display: block;
-  margin: 20px auto;
+  margin: $padding-show-more auto;
   padding: 10px 40px;
   background-color: $name;
   color: $primary-color;
@@ -111,7 +139,6 @@ body {
 .show-more.hide {
   display: none;
 }
-
 
 .footer {
   hr {
@@ -127,7 +154,6 @@ body {
     font-size: small;
   }
 }
-
 
 //Page Details
 .page-detail {
@@ -189,7 +215,7 @@ body {
 .screenshots {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-gap: 20px;
+  grid-gap: $margin-between-sections;
 }
 
 .screenshots img {
@@ -207,16 +233,17 @@ body {
 #first {
   display: flex;
   justify-content: space-between;
+  margin-top: $margin-between-sections;
 }
 
 #second {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  margin-top: $margin-between-sections;
 }
 
-#second .genres,
-#second .tags {
-  flex: 1;
+#second p {
+  margin: 0;
 }
 
 .position-details {
@@ -227,32 +254,19 @@ body {
 .position-details .mini-details,
 .position-details .release-date,
 .position-details .developers,
-.position-details .plateforms,
+.position-details .platforms,
 .position-details .publishers,
-.position-details .genres,
-.position-details .tags {
+.position-details .genres {
   margin: 0;
 }
 
-#plot-details {
-  display: flex;
-  flex-direction: column;
+.stores a {
+  display: block;
+  margin-bottom: 10px; // Espacement entre les liens
 }
-
-#plot-details .plot,
-#plot-details .description {
-  margin: 0;
-}
-
-.plot {
-  font-weight: bold;
-}
-
-
-
-
 
 #pageContent {
-  margin-top: 20px;
+  margin-top: $margin-between-sections;
 }
+
 

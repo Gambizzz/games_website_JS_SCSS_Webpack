@@ -1,11 +1,17 @@
 /*!****************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/style/styles.scss ***!
   \****************************************************************************************************************/
-@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css2?family=Expletus+Sans:ital,wght@0,400..700;1,400..700&display=swap);
+/*!********************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/style/styles.scss (1) ***!
+  \********************************************************************************************************************/
 body {
+  font-size: 1em;
+  font-weight: normal;
   color: white;
   background-color: #1e1c1c;
-  margin: 2%; }
+  margin: 2%;
+  font-family: "Expletus Sans", sans-serif; }
 
 .name {
   color: red;
@@ -38,7 +44,7 @@ body {
   font-size: 1.2em; }
 
 #filters {
-  margin-top: 30px; }
+  margin-top: 20px; }
 
 #platformFilter {
   padding: 10px 20px 10px 10px;
@@ -135,17 +141,12 @@ body {
 .screenshots {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  /* Deux colonnes */
-  grid-gap: 20px;
-  /* Espacement entre les images */ }
+  grid-gap: 20px; }
 
 .screenshots img {
   width: 100%;
-  /* Les images occupent toute la largeur de leur conteneur */
   height: auto;
-  /* Hauteur automatique pour conserver les proportions */
-  display: block;
-  /* Pour éviter les espaces blancs sous les images */ }
+  display: block; }
 
 .name-details {
   font-size: 2.5em;
@@ -154,15 +155,16 @@ body {
 
 #first {
   display: flex;
-  justify-content: space-between; }
+  justify-content: space-between;
+  margin-top: 20px; }
 
 #second {
   display: flex;
-  flex-direction: row; }
+  flex-direction: column;
+  margin-top: 20px; }
 
-#second .genres,
-#second .tags {
-  flex: 1; }
+#second p {
+  margin: 0; }
 
 .position-details {
   display: flex;
@@ -171,18 +173,14 @@ body {
 .position-details .mini-details,
 .position-details .release-date,
 .position-details .developers,
-.position-details .plateforms,
+.position-details .platforms,
 .position-details .publishers,
-.position-details .genres,
-.position-details .tags {
+.position-details .genres {
   margin: 0; }
 
-#plot-details {
-  display: flex;
-  flex-direction: column; }
-
-.plot {
-  font-weight: bold; }
+.stores a {
+  display: block;
+  margin-bottom: 10px; }
 
 #pageContent {
   margin-top: 20px; }
