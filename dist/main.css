@@ -43,9 +43,6 @@ body {
 .hero p {
   font-size: 1.2em; }
 
-#filters {
-  margin-top: 20px; }
-
 #platformFilter {
   padding: 10px 20px 10px 10px;
   background-color: red;
@@ -116,6 +113,7 @@ body {
     z-index: 1; }
   .pic .website {
     position: absolute;
+    justify-content: end;
     top: 90%;
     left: 90%;
     margin: 20px auto;
@@ -213,6 +211,26 @@ a.internal-link {
       transform: scaleX(0);
       transition: transform 0.5s ease; }
     a.internal-link:hover:hover:before {
+      transform: scaleX(1); }
+
+.store-link {
+  text-decoration: none;
+  color: white; }
+  .store-link:hover {
+    position: relative;
+    text-decoration: none; }
+    .store-link:hover:before {
+      content: '';
+      position: absolute;
+      width: 4%;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: white;
+      transform-origin: left;
+      transform: scaleX(0);
+      transition: transform 0.5s ease; }
+    .store-link:hover:hover:before {
       transform: scaleX(1); }
 
 #pageContent {

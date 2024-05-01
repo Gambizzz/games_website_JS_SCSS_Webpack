@@ -83,10 +83,6 @@ body {
   font-size: 1.2em;
 }
 
-#filters {
-  margin-top: $margin-between-sections;
-}
-
 #platformFilter {
   padding: $padding-platform-filter-vertical $padding-platform-filter-horizontal $padding-platform-filter-vertical 10px;
   background-color: $name;
@@ -299,6 +295,33 @@ a.internal-link {
       bottom: 0; // Positionner le soulignement en bas
       left: 0; // Positionner le soulignement à gauche
       background-color: $name; // Couleur du soulignement
+      transform-origin: left; // Définir l'origine de la transformation à gauche
+      transform: scaleX(0); // Initialiser l'échelle horizontale à 0 (aucun soulignement)
+      transition: transform 0.5s ease; // Ajouter une transition pour l'animation
+    }
+    
+    &:hover:before {
+      transform: scaleX(1); // Mettre à l'échelle horizontale à 1 (soulignement complet)
+    }
+  }
+}
+
+.store-link {
+  text-decoration: none; // Supprimer le soulignement par défaut
+  color: $primary-color; // Couleur du lien
+
+  &:hover {
+    position: relative; // Définir la position relative pour le pseudo-élément
+    text-decoration: none; // Supprimer le soulignement par défaut lors du survol
+    
+    &:before {
+      content: ''; // Ajouter un contenu au pseudo-élément
+      position: absolute; // Définir la position absolue par rapport au lien
+      width: 4%; // Définir la largeur à 100% du lien parent
+      height: 2px; // Définir la hauteur du soulignement
+      bottom: 0; // Positionner le soulignement en bas
+      left: 0; // Positionner le soulignement à gauche
+      background-color: $primary-color; // Couleur du soulignement
       transform-origin: left; // Définir l'origine de la transformation à gauche
       transform: scaleX(0); // Initialiser l'échelle horizontale à 0 (aucun soulignement)
       transition: transform 0.5s ease; // Ajouter une transition pour l'animation

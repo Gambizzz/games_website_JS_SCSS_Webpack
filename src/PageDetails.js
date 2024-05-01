@@ -82,11 +82,13 @@ const PageDetails = (argument) => {
         articleDOM.querySelector(".screenshots").innerHTML = screenshotsHTML;
       }
 
-      // Liens d'achat
+      //Stores
       if (storesData.results.length > 0) {
-        const storesList = storesData.results.map(store => `<a href="${store.url}">${store.id}</a>`);
-        articleDOM.querySelector(".stores").innerHTML = `${storesList}`;
+        const storesList = storesData.results.map(store => `<a class="store-link" href="${store.url}">${store.id}</a>`).join('');
+        articleDOM.querySelector(".stores").innerHTML = storesList;
       }
+
+
 
       // Trailers
       if (trailerData.results.length > 0) {
